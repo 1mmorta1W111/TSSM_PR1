@@ -1,12 +1,37 @@
-﻿<Window x:Class="TSSM_PR1.MainWindow"
+﻿<Window x:Class="WpfApp5.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:TSSM_PR1"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="Калькулятор S(x, b)" Height="500" Width="600">
+    <Grid Margin="10">
+        <!-- Элемент Image для отображения скриншота -->
+        <Image Source="Безымянный.png" HorizontalAlignment="Left" VerticalAlignment="Top" Width="400" Height="100" />
 
+        <!-- Метки и поля ввода -->
+        <Label Content="Введите значение x:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,120,0,0" />
+        <TextBox Name="TextBoxX" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="150,120,0,0" Width="200" />
+
+        <Label Content="Введите значение b:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,160,0,0" />
+        <TextBox Name="TextBoxB" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="150,160,0,0" Width="200" />
+
+        <!-- Выбор функции через переключатели -->
+        <Label Content="Выберите функцию f(x):" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,200,0,0" />
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="150,200,0,0">
+            <RadioButton Name="RadioButtonSinh" Content="sh(x)" IsChecked="True" />
+            <RadioButton Name="RadioButtonSquare" Content="x^2" />
+            <RadioButton Name="RadioButtonExp" Content="e^x" />
+        </StackPanel>
+
+        <!-- Кнопки -->
+        <Button Name="ButtonCalculate" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,300,0,0" Width="100" Height="30" Click="ButtonCalculate_Click">
+            <Image Source="c4.png" Stretch="Uniform" />
+        </Button>
+
+        <Button Name="ButtonClear" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="120,300,0,0" Width="100" Height="30" Click="ButtonClear_Click">
+            <Image Source="639709.png" Stretch="Uniform" />
+        </Button>
+
+        <!-- Результат -->
+        <Label Content="Результат S:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,360,0,0" />
+        <TextBox Name="TextBoxResult" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="150,360,0,0" Width="200" IsReadOnly="True" Background="LightGray" />
     </Grid>
 </Window>
